@@ -150,5 +150,6 @@ def upload_video():
 # Routes for uploading audio, image, and other functionalities...
 # (Keep the rest of your routes as they are.)
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
