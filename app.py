@@ -8,10 +8,10 @@ from processing.url_processing import scrape_url
 from tools.automate_input_processing import detect_and_process_file, detect_and_process_json
 import requests
 from bs4 import BeautifulSoup
-
+from flask_cors import CORS
 # Initialize Flask app
 app = Flask(__name__)
-
+CORS(app)
 # Directory to store uploaded video files
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)

@@ -1,5 +1,5 @@
 # Use a slim Python image as the base
-FROM python:3.12-slim
+FROM python:3.12
 
 # Set environment variables for Python and Flask
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -18,6 +18,7 @@ COPY requirements.txt /app/
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         curl \
+        libgl1 \
     && pip install --no-cache-dir -r requirements.txt \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
